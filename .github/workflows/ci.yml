@@ -15,7 +15,7 @@ jobs:
       with:
         node-version: '18'
 
-    - name: デバッグ: 実行場所とファイル確認
+    - name: 実行場所とファイル確認
       run: |
         echo "PWD:"
         pwd
