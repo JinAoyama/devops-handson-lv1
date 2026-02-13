@@ -15,17 +15,20 @@ jobs:
       with:
         node-version: '18'
 
-    - name: 実行場所とファイル確認
+    
+    - name: workspace の中身確認
       run: |
-        echo "PWD:"
+        echo "=== PWD ==="
         pwd
-        echo "LS:"
+        echo "=== LS ==="
         ls -la
-        echo "Find (maxdepth 2):"
-        find . -maxdepth 2 -type f -print
-        echo "Node/NPM:"
-        node -v
-        npm -v
+        echo "=== Find files (maxdepth 3) ==="
+        find . -maxdepth 3 -type f -print
+        echo "=== Current commit ==="
+        git rev-parse HEAD || true
+        echo "=== Branch ==="
+        git branch -a || true
+
 
     - name: ライブラリのインストール
       run: npm install
