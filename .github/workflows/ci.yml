@@ -15,6 +15,18 @@ jobs:
       with:
         node-version: '18'
 
+    - name: デバッグ: 実行場所とファイル確認
+      run: |
+        echo "PWD:"
+        pwd
+        echo "LS:"
+        ls -la
+        echo "Find (maxdepth 2):"
+        find . -maxdepth 2 -type f -print
+        echo "Node/NPM:"
+        node -v
+        npm -v
+
     - name: ライブラリのインストール
       run: npm install
 
